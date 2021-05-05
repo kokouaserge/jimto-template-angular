@@ -1,0 +1,70 @@
+
+    <h3 class="listing-desc-headline margin-top-75 margin-bottom-20">Commentaires <span>(12)</span></h3>
+
+    <!-- Rating Overview -->
+    <div class="rating-overview">
+        <div class="rating-overview-box">
+            <span class="rating-overview-box-total">4.2</span>
+            <span class="rating-overview-box-percent">/ 5.0</span>
+            <div class="star-rating" [innerHtml]="loadStarthtml(4.2)"></div>
+        </div>
+
+        <div class="rating-bars">
+
+                <div class="rating-bars-item" *ngFor="let item of services;let i=index;">
+                    <span class="rating-bars-name">{{item.libelle}} <i class="tip" [attr.data-tip-content]="item.tipContent"></i></span>
+                    <span class="rating-bars-inner" >
+                        <span class="rating-bars-rating" [ngClass]="getClass(item.serviceContent)">
+                            <span class="rating-bars-rating-inner" [ngStyle]="{'width': getWidth(item.serviceContent)}"></span>
+                        </span>
+                        <strong>{{item.serviceContent}}</strong>
+                    </span>
+                </div>
+              
+                
+        </div>
+    </div>
+    <!-- Rating Overview / End -->
+
+
+    <div class="clearfix"></div>
+
+    <!-- Reviews -->
+    <section class="comments listing-reviews">
+        <ul>
+
+            <li *ngFor="let review of reviews">
+                <div class="avatar"><img [src]="review.img" alt="" /></div>
+                <div class="comment-content"><div class="arrow-comment"></div>
+                    <div class="comment-by">{{ review.name }} <i class="tip" *ngIf="review.verified" [attr.data-tip-content]="review.datatipContent"></i> <span class="date"[innerText]="review.DateAdd"></span>
+                        <div class="star-rating"  [innerHtml]="loadStarthtml(review.nbreRatin)"></div>
+                    </div>
+                    <p>
+                        {{ review.avisText }}
+                    </p>
+                
+                </div>
+            </li>
+
+            
+         </ul>
+    </section>
+
+    <!-- Pagination -->
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Pagination -->
+            <div class="pagination-container margin-top-30">
+                <nav class="pagination">
+                    <ul>
+                        <li><a href="#" class="current-page">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#"><i class="sl sl-icon-arrow-right"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <!-- Pagination / End -->

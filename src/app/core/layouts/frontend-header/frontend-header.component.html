@@ -1,0 +1,212 @@
+        <!-- Header Container
+        ================================================== -->
+        <header id="header-container" class="no-shadow" >
+
+            <!-- Header -->
+            <div id="header">
+                <div class="container">
+                    
+                    <!-- Left Side Content -->
+                    <div class="left-side">
+                        
+                        <!-- Logo -->
+                        <div id="logo">
+									<a [routerLink]="'/'">
+										<img src="assets/images/logo2-1.jpg" alt=""/>
+									</a>
+                        </div>
+
+                        <!-- Mobile Navigation -->
+                            <div class="mmenu-trigger">
+                                <button class="hamburger hamburger--collapse" type="button">
+                                    <span class="hamburger-box">
+                                        <span class="hamburger-inner"></span>
+                                    </span>
+                                </button>
+                            </div>
+                         <!-- Mobile Navigation / End -->
+                      
+
+                        <!-- Main Navigation -->
+                        <nav id="navigation" class="style-1" >
+                            <ul id="responsive" >
+                                    <li>
+                                        <a  [routerLink]="'/entreprise'" [routerLinkActive]="'current'">Entreprise</a>
+                                    </li>
+
+                                    <li>
+                                        <a  [routerLink]="'/offres-et-services'" [routerLinkActive]="'current'">Offre et tarifs</a>
+                                    </li>
+
+                                    <li>
+                                        <a  [routerLink]="'/a-propos'" [routerLinkActive]="'current'">A propos</a>
+                                    </li>
+                            </ul>
+                        </nav>
+						<div class="clearfix"></div>
+                        <!-- Main Navigation / End -->
+                        
+                    </div>
+                    <!-- Left Side Content / End -->
+
+
+                    <!-- Right Side Content / End -->
+                    <div class="right-side">
+                        <!-- 	 Header Widget  -->
+                            <div class="header-widget">
+                                
+                                <div class="user-menu" *ngIf="userIsLogin">
+                                        <div class="user-name"><span><img src="assets/images/dashboard-avatar.jpg" alt=""></span>Hi, Tom!</div>
+                                        <ul>
+                                            <li><a href="dashboard.html"><i class="sl sl-icon-settings"></i> Tableau de bord</a></li>
+                                            <li><a href="dashboard-messages.html"><i class="sl sl-icon-envelope-open"></i> Messages</a></li>
+                                            <li><a href="index-2.html"><i class="sl sl-icon-power"></i> Se deconnecter</a></li>
+                                        </ul>
+                                </div>
+                                <div *ngIf="!userIsLogin">
+
+                                        <a (click)="openModal(loginModal)" class="button mr-2" > Me connecter</a>
+                                        <a (click)="openModal(registerModal)" class="button border" >Créer mon compte</a>
+
+                                </div>
+
+                            </div>
+                            <!-- Header Widget / End -->
+
+                    </div>
+                    <!-- Right Side Content / End -->
+
+                </div>
+            </div>
+            <!-- Header / End -->
+
+        </header>
+        <div class="clearfix"></div>
+        <!-- Header Container / End -->
+
+
+		<ng-template #loginModal>
+			
+			<div class="modal-header">				
+				<header class="modal__header-big mt-5 ml-3">
+					<p class="modal__title">Me connecter</p>
+					<p class="modal__subtitle">
+						Pas encore membre ?&nbsp;
+						<a (click)="OpenWithCloseModal(registerModal)" style="cursor: pointer;">
+							Inscrivez-vous</a>
+					</p>
+					
+					<button type="button" class="close pull-right modal__close" aria-label="Close" (click)="modalRef.hide()">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+				</header>
+				
+			</div>
+			  <div class="modal-body">
+
+				<ul class="button-social mt-5">
+					<li><a href="#"><i class="fa fa-facebook fab" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter fab" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-google fab" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-instagram fab" aria-hidden="true"></i></a></li>
+				</ul>
+
+				<div class="m-separator m-separator__small">
+					<span>&nbsp;</span>
+				</div>
+
+						<div id="cd-login" > <!-- log in form -->
+							<form class="cd-form">
+								<p class="fieldset">
+									<label class="image-replace cd-email" for="signin-email">E-mail</label>
+									<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+									<span class="cd-error-message">Error message here!</span>
+								</p>
+			
+								<p class="fieldset">
+									<label class="image-replace cd-password" for="signin-password">Password</label>
+									<input class="full-width has-padding has-border" id="signin-password" [type]="fieldType"  placeholder="Password">
+									<i class="hide-password fa"
+										[ngClass]="{
+										  'fa-eye-slash ': !fieldTextTypeLogin, 
+										  'fa-eye': fieldTextTypeLogin
+										}"
+										(click)="toggleFieldTextTypeLogin()"></i>
+									<span class="cd-error-message">Error message here!</span>
+								</p>
+			
+								
+			
+								<p class="fieldset">
+									<input class="full-width" style="background-color: #f91942 !important;" type="submit" value="Se connecter">
+								</p>
+							</form>
+							
+							<p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+							
+						</div> <!-- cd-login -->
+			  </div>
+		</ng-template>
+
+		<ng-template #registerModal>
+			
+			<div class="modal-header">				
+				<header class="modal__header-big mt-5 ml-3">
+					<p class="modal__title">Inscription</p>
+					<p class="modal__subtitle">
+						Deja membre ?&nbsp;
+						<a (click)="OpenWithCloseModal(loginModal)" style="cursor: pointer;">
+							Connectez-vous</a>
+					</p>
+					
+					<button type="button" class="close pull-right modal__close" aria-label="Close" (click)="modalRef.hide()">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+				</header>
+				
+			</div>
+			  <div class="modal-body">
+
+				<ul class="button-social mt-5">
+					<li><a href="#"><i class="fa fa-facebook fab" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter fab" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-google fab" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-instagram fab" aria-hidden="true"></i></a></li>
+				</ul>
+
+				<div class="m-separator m-separator__small">
+					<span>&nbsp;</span>
+				</div>
+
+						<div id="cd-login" > <!-- log in form -->
+							<form class="cd-form">
+								<p class="fieldset">
+									<label class="image-replace cd-email" for="signin-email">E-mail</label>
+									<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+									<span class="cd-error-message">Error message here!</span>
+								</p>
+			
+								<p class="fieldset">
+									<label class="image-replace cd-password" for="signin-password">Password</label>
+									<input class="full-width has-padding has-border" id="signin-password" [type]="fieldType"  placeholder="Password">
+									<i class="hide-password fa"
+										[ngClass]="{
+										  'fa-eye-slash ': !fieldTextTypeLogin, 
+										  'fa-eye': fieldTextTypeLogin
+										}"
+										(click)="toggleFieldTextTypeLogin()"></i>
+									<span class="cd-error-message">Error message here!</span>
+								</p>
+			
+								
+			
+								<p class="fieldset">
+									<input class="full-width" style="background-color: #f91942 !important;" type="submit" value="Se connecter">
+								</p>
+							</form>
+							
+							<p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+							
+						</div> <!-- cd-login -->
+			  </div>
+		</ng-template>

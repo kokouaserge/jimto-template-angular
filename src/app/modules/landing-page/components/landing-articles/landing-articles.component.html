@@ -1,0 +1,39 @@
+<div class= "cards-block__content mt-5 ">
+    <div class= "container mb-5">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="custom-h2">Découvrir les études et livres blancs</h2>
+                <div class="cards-block__list c-card-list">
+                    
+                    <article class="c-card c-card_small mb-5" *ngFor="let article of articles; let i=index; trackBy: trackByFn">
+                            
+                                <div class="c-card__img">
+                                    
+                                        <a href="#" class="c-card__link" data-heap="home_card_studies_items_0_cta_0">
+                                        <img class="imgLazy loaded" [src]="article.img_src" [alt]="article.title">
+                                        </a>
+                                    
+                                </div>
+                            
+                            <div class="c-card__content">
+                                
+                                    <a href="#" class="c-card__link" data-heap="home_card_studies_items_0_cta_1">
+                                        <h3 class="c-card__title">{{  article.title }}</h3>
+                                        <div class="c-card__text">
+                                            <div class="prismic-rich-text"><p>{{  article.content_text }}</p></div>
+                                        </div>
+                                    </a>
+                                
+                            </div>
+                            
+                                <div class="c-card__footer">
+                                    <a href="#" class="button">Télécharger</a>
+                                </div>
+                            
+                        </article>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container landing-page__section-content mt-5">
+    <div class="freelancers-section__wrapper row between-md">
+        <div class="col-xs-12 col-md-5">
+            <ul class="freelancers-section__freelance">  
+                    <li class="freelancers-section__freelance-item-wrapper"
+                         *ngFor="let item of images_verified; let i=index;" 
+                         [ngStyle]="{'height':item.id==2 ? '310.8px' : '251.667px' }" >
+                        <img class="imgLazy loaded" alt="" [src]="item.src"  >
+                    </li>
+            </ul>
+        </div>
+
+        <div class="freelancers-section__freelance-details-wrapper col-xs-12 col-md-5">
+            <h3 class="custom-h2">Des experts vérifiés et évalués</h3>
+ 
+                <div class="freelancers-section__freelance-details-description">
+                    <div class="prismic-rich-text"><p>Documents légaux aux normes, évaluations et recommandations par les entreprises : le sérieux et l’expertise des freelances sont toujours validés.</p></div>
+                </div>
+
+                <div class="freelancers-section__freelance-details-stats">
+                    <div class="freelancers-section__freelance-details-rate">100%</div>
+                    <div class="freelancers-section__freelance-details-text"><div class="prismic-rich-text"><p>de vérifications</p></div></div>
+                </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+
+<section class="fullwidth border-top margin-top-40 margin-bottom-0 padding-top-60 padding-bottom-65" data-background-color="#ffffff">
+	<!-- Logo Carousel -->
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12">
+				<h3 class="headline centered margin-bottom-40 margin-top-10">Plus de 30 000 entreprises nous ont rejoint</h3>
+			</div>
+			
+			<!-- Carousel -->
+			<div class="col-md-12">
+				<ngx-slick-carousel class="logo-slick-carousel dot-navigation" 
+								#slickModal="slick-carousel" 
+								[config]="slideConfig" >
+
+						<div ngxSlickItem *ngFor="let img_src of brand_slider_imgs; let i=index; trackBy: trackByFn" class="item">
+							<img [src]="img_src" alt="">
+						</div>
+						
+				</ngx-slick-carousel>
+			</div>
+			<!-- Carousel / End -->
+
+		</div>
+	</div>
+	<!-- Logo Carousel / End -->
+</section>

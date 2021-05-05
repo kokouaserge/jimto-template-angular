@@ -1,0 +1,187 @@
+
+<!-- Slider
+==================================================  -->
+
+<ngx-slick-carousel class="listing-slider mfp-gallery-container margin-bottom-0" 
+								#slickModal="slick-carousel" 
+								[config]="slideConfig" >
+
+						<ng-container ngxSlickItem *ngFor="let image_slide of banner_slider_images; let i=index;">
+                            <a [href]="image_slide" [attr.data-background-image]="image_slide" class="item mfp-gallery" [attr.title]="'Title'+ i"
+                            		style="background-image:url('{{image_slide}}')"></a>
+						</ng-container>
+</ngx-slick-carousel>
+
+
+<!-- Content
+================================================== -->
+<div class="container">
+	<div class="row sticky-wrapper">
+		<div class="col-lg-8 col-md-8 padding-right-30">
+
+            <app-titlebar [title]="title" [categorie]="categorie"
+                         [location]="location" [avis]="avis" [nbreRating]="nbreRating"></app-titlebar>
+
+			<!-- Listing Nav -->
+			<div id="listing-nav" class="listing-nav-container">
+				<ul class="listing-nav">
+					<li><a pageScroll href="#listing-overview" class="active" >Description</a></li>
+					<li><a pageScroll href="#listing-reviews">Commentaires</a></li>
+					<li><a pageScroll href="#add-review">Ajouter un commentaire</a></li>
+				</ul>
+			</div>
+			
+			<!-- Overview -->
+			<div id="listing-overview" class="listing-section">
+
+				<!-- Description -->
+
+				<p>
+					Ut euismod ultricies sollicitudin. Curabitur sed dapibus nulla. Nulla eget iaculis lectus. Mauris ac maximus neque. Nam in mauris quis libero sodales eleifend. Morbi varius, nulla sit amet rutrum elementum, est elit finibus tellus, ut tristique elit risus at metus.
+				</p>
+
+				<p>
+					 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.
+				</p>
+				
+				
+				<!-- Listing Contacts -->
+				<div class="listing-links-container">
+
+					<ul class="listing-links contact-links">
+						<li><a href="tel:12-345-678" class="listing-links"><i class="fa fa-phone"></i> +12 345 6578</a></li>
+						<li><a href="mailto:mail@example.com" class="listing-links"><i class="fa fa-envelope-o"></i> mail@example.com</a>
+						</li>
+						<li><a href="#" target="_blank"  class="listing-links"><i class="fa fa-link"></i> www.example.com</a></li>
+					</ul>
+					<div class="clearfix"></div>
+
+					<ul class="listing-links">
+						<li><a href="#" target="_blank" class="listing-links-fb"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+						<li><a href="#" target="_blank" class="listing-links-yt"><i class="fa fa-youtube-play"></i> YouTube</a></li>
+						<li><a href="#" target="_blank" class="listing-links-ig"><i class="fa fa-instagram"></i> Instagram</a></li>
+						<li><a href="#" target="_blank" class="listing-links-tt"><i class="fa fa-twitter"></i> Twitter</a></li>
+					</ul>
+					<div class="clearfix"></div>
+
+				</div>
+				<div class="clearfix"></div>
+
+			</div>
+
+
+            <!-- Reviews -->
+            <div id="listing-reviews" class="listing-section">
+				
+			        <app-reviews-list ></app-reviews-list>
+
+            </div>
+
+
+			<!-- Add Review Box -->
+			<div id="add-review" class="add-review-box">
+
+				<app-add-review></app-add-review>
+			</div>
+			<!-- Add Review Box / End -->
+
+
+		</div>
+
+
+		<!-- Sidebar
+		================================================== -->
+		<div class="col-lg-4 col-md-4 margin-top-75 sticky">
+
+				
+			
+
+			<!-- Book Now -->
+			<div id="booking-widget-anchor" class="boxed-widget booking-widget margin-top-35">
+				<h3><i class="fa fa-calendar-check-o "></i> Reservation</h3>
+				<div class="row with-forms  margin-top-0">
+
+					<!-- Date Range Picker - docs: http://www.daterangepicker.com/ -->
+					<div class="col-lg-12">
+						<input type="text" placeholder="Date" #daterangepicker="bsDaterangepicker"
+						bsDaterangepicker [bsConfig]="datepickerConfig">
+					</div>
+
+				
+
+				</div>
+				
+				<!-- Book Now -->
+				<a href="#" class="button book-now fullwidth margin-top-5">Demande de reservation</a>
+			</div>
+			<!-- Book Now / End -->
+
+
+			<!-- Coupon Widget -->
+			<div class="coupon-widget" style="background-image: url(assets/images/single-listing-01.jpg);">
+				<a href="#" class="coupon-top">
+					<span class="coupon-link-icon"></span>
+					<h3>Order 1 burger and get 50% off on second!</h3>
+					<div class="coupon-valid-untill">Expires 25/10/2019</div>
+					<div class="coupon-how-to-use"><strong>How to use?</strong> Just show us this coupon on a screen of your smartphone!</div>
+				</a>
+				<div class="coupon-bottom">
+					<div class="coupon-scissors-icon"></div>
+					<div class="coupon-code">L1ST30</div>
+				</div>
+			</div>
+
+		
+
+
+			<!-- Contact -->
+			<div class="boxed-widget margin-top-35">
+				<div class="hosted-by-title">
+					<h4><span>Poster par</span> <a href="pages-user-profile.html">Tom Perrin</a></h4>
+					<a href="pages-user-profile.html" class="hosted-by-avatar"><img src="assets/images/dashboard-avatar.jpg" alt=""></a>
+				</div>
+				<ul class="listing-details-sidebar">
+					<li><i class="sl sl-icon-phone"></i> (123) 123-456</li>
+					<!-- <li><i class="sl sl-icon-globe"></i> <a href="#">http://example.com</a></li> -->
+					<li><i class="fa fa-envelope-o"></i> <a href="#">tom@example.com</a></li>
+				</ul>
+
+				<ul class="listing-details-sidebar social-profiles">
+					<li><a href="#" class="facebook-profile"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+					<li><a href="#" class="twitter-profile"><i class="fa fa-twitter"></i> Twitter</a></li>
+					<!-- <li><a href="#" class="gplus-profile"><i class="fa fa-google-plus"></i> Google Plus</a></li> -->
+				</ul>
+
+				<!-- Reply to review popup -->
+				<div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+					<div class="small-dialog-header">
+						<h3>Envoyer Message</h3>
+					</div>
+					<div class="message-reply margin-top-0">
+						<textarea cols="40" rows="3" placeholder="Ecrire à Tom"></textarea>
+						<button class="button">Envoyer</button>
+					</div>
+				</div>
+
+				<a href="#small-dialog" class="send-message-to-owner button popup-with-zoom-anim">
+                    <i class="sl sl-icon-envelope-open"></i>
+                    Ecrire à Tom
+                </a>
+			</div>
+			<!-- Contact / End-->
+
+
+			<!-- Share / Like -->
+			<div class="listing-share margin-top-40 margin-bottom-40 no-border">
+				<button class="like-button"><span class="like-icon"></span> Ajouter a votre liste de souhait</button> 
+				
+					<div class="clearfix"></div>
+			</div>
+
+		</div>
+		<!-- Sidebar / End -->
+
+	</div>
+</div>
+
+ 

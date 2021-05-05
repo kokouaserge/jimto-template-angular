@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12">
+            <h3 class="headline centered margin-bottom-35 margin-top-70">
+                <strong class="headline-with-separator">
+                    Des freelances proches de vous
+                </strong>
+               </h3>
+        </div>
+        
+        <div class="col-md-6" *ngFor="let ville of villes; let i=index; trackBy: trackByFn">
+
+            <!-- Image Box -->
+            <a href="listings-list-with-sidebar.html" class="img-box alternative-imagebox" [attr.data-background-image]="ville.img_src">
+                <div class="img-box-content visible">
+                    <h4>{{ville.title}} </h4> 
+                </div>
+            <div class="img-box-background" style="background-image: url({{ville.img_src}});"></div></a>
+
+        </div>	
+
+            <div class="col-md-12 text-center mt-2">
+                <a href="/freelancers/locations" class="m-btn m-btn_big m-btn_blank">Voir plus de villes</a>
+            </div>
+        
+
+    </div>
+
+</div>

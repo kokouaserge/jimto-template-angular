@@ -1,0 +1,17 @@
+<div class="hp-categories">
+    <div class="hp-categories__content row">
+        <div class="col-md-offset-1 col-md-10 col-xs-9">
+            <h2 class="custom-h2">Les catégories de métiers</h2>
+
+            <div class="hp-categories__list m-tag-list">
+                
+                    <div class="m-tag  m-tag_secondary m-tag_big m-tag_clickable" 
+                        *ngFor="let categorie of categories; let i=index; trackBy: trackByFn">
+                        <a [href]="'/a/categorie/'+categorie.value" class="m-link hp-categories__item-link" >{{ categorie.title}}</a>
+                    </div>                
+                
+            </div>
+
+        </div>
+    </div>
+</div>

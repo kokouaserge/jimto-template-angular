@@ -1,0 +1,96 @@
+<!-- Sorting - Filtering Section -->
+<div class="row margin-bottom-25 margin-top-30">
+
+    <div class="col-md-6">
+        <!-- Layout Switcher -->
+        <div class="layout-switcher">
+            <span  class="grid" [ngClass]="{'active':displayMode == 'grid'}" (click)="OnchangeMode('grid')" style="cursor: pointer;">
+                <i class="fa fa-th"></i>
+            </span>
+            <span  class="list " [ngClass]="{'active':displayMode == 'list'}" (click)="OnchangeMode('list')" style="cursor: pointer;">
+                <i class="fa fa-align-justify"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="fullwidth-filters">
+            
+            <!-- Panel Dropdown -->
+            <div class="panel-dropdown wide float-right" [ngClass]="{'active': panelActive == 'more-filter'}"> 
+                <span style="cursor: pointer;" (click)="OnchangePanelDropdown('more-filter')">Plus de filtre</span>
+                <div class="panel-dropdown-content checkboxes">
+
+                    <!-- Checkboxes -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input id="check-a" type="checkbox" name="check">
+                            <label for="check-a">Elevator in building</label>
+
+                            <input id="check-b" type="checkbox" name="check">
+                            <label for="check-b">Friendly workspace</label>
+
+                            <input id="check-c" type="checkbox" name="check">
+                            <label for="check-c">Instant Book</label>
+
+                            <input id="check-d" type="checkbox" name="check">
+                            <label for="check-d">Wireless Internet</label>
+                        </div>	
+
+                        <div class="col-md-6">
+                            <input id="check-e" type="checkbox" name="check" >
+                            <label for="check-e">Free parking on premises</label>
+
+                            <input id="check-f" type="checkbox" name="check" >
+                            <label for="check-f">Free parking on street</label>
+
+                            <input id="check-g" type="checkbox" name="check">
+                            <label for="check-g">Smoking allowed</label>	
+
+                            <input id="check-h" type="checkbox" name="check">
+                            <label for="check-h">Events</label>
+                        </div>
+                    </div>
+                    
+                    <!-- Buttons -->
+                    <div class="panel-buttons">
+                        <button class="panel-cancel">Annuler</button>
+                        <button class="panel-apply">Appliquer</button>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Panel Dropdown / End -->
+
+            <!-- Panel Dropdown-->
+            <div class="panel-dropdown float-right" [ngClass]="{'active': panelActive == 'distance'}">
+                <span style="cursor: pointer;" (click)="OnchangePanelDropdown('distance')">Radius distance</span>
+                <div class="panel-dropdown-content" >
+                    <input class="distance-radius" type="range" min="1" max="100" step="1" value="50" data-title="le perimetre">
+                    <div class="panel-buttons">
+                        <button class="panel-cancel">Desactiver</button>
+                        <button class="panel-apply">Appliquer</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Panel Dropdown / End -->
+
+            <!-- Sort by -->
+            <div class="sort-by">
+                <div class="sort-by-select">
+                    <select data-placeholder="Ordre par default" class="chosen-select-no-single">
+                        <option>Ordre par default</option>	
+                        <option>Highest Rated</option>
+                        <option>Most Reviewed</option>
+                        <option>Newest Listings</option>
+                        <option>Oldest Listings</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Sort by / End -->
+
+        </div>
+    </div>
+
+</div>
+<!-- Sorting - Filtering Section / End -->

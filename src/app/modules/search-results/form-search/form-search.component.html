@@ -1,0 +1,23 @@
+<!-- Search -->
+<div class="col-md-12">
+    <div class="main-search-input gray-style margin-top-0 margin-bottom-10">
+
+        <div class="main-search-input-item location">
+            <div id="autocomplete-container">
+                <input id="autocomplete-input" type="text" placeholder="Essayez avec Abidjan">
+            </div>
+            <a href="#"><i class="fa fa-map-marker"></i></a>
+        </div>
+
+        <div class="main-search-input-item">
+            <select data-placeholder="Toutes les Categories" class="chosen-select" >
+                <option>Toutes les Categories</option>	
+                <option *ngFor="let categorie of categories; let i=index; trackBy: trackByFn" [value]="categorie.value">{{ categorie.title}}</option>
+
+            </select>
+        </div>
+
+        <button class="button">Trouver votre freelance</button>
+    </div>
+</div>
+<!-- Search Section / End -->

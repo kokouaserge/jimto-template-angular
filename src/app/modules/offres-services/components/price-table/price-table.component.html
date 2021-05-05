@@ -1,0 +1,24 @@
+<div class="pricing-container margin-top-30">
+
+        <!-- Plan -->
+        <div *ngFor="let item of price_plans" class="plan " [ngClass]="{'featured': item.featured}">
+
+            <div class="listing-badge" *ngIf="item.featured">
+                <span class="featured">Populaire</span>
+            </div>
+
+            <div class="plan-price">
+                <h3>{{ item.title }}</h3>
+                <span class="value">{{ item.cout }}</span>
+                <span class="period">{{ item.periode }}</span>
+            </div>
+            <div class="plan-features">
+                <ul>
+                    <li *ngFor="let feature of item.plan_features">{{ feature }}</li>
+                </ul>
+                <a class="button" href="#">Commencer</a>
+            </div>
+        </div>
+
+
+    </div>
